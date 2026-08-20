@@ -10,7 +10,7 @@ class Solution {
                 }
             }
             if(cur>0){
-                tot=tot+prev*cur;
+                tot+=prev*cur;
                 prev=cur;
             }
         }
