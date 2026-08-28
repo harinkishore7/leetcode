@@ -1,16 +1,15 @@
 class Solution {
     public int minPartitions(String n) {
-        char maxc='0';
-        for(char c:n.toCharArray()){
-            if(maxc<c){
-                maxc=c;
+        int max=0;
+        for(int i=0;i<n.length();i++){
+            int digit=n.charAt(i)-'0';
+            if(digit>max){
+                max=digit;
             }
-            if(maxc=='9'){
+            if(max=='9'){
                 return 9;
             }
-
         }
-        return maxc-'0';
-        
+        return max;
     }
 }
