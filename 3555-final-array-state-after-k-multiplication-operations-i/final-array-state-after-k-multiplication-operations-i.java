@@ -1,18 +1,15 @@
 class Solution {
     public int[] getFinalState(int[] nums, int k, int multiplier) {
-        int l=nums.length;
-        
-        for(int t=0;t<k;t++){
-            int m=nums[0];
-            int p=0;
-            for(int i=0;i<l;i++){
-                if(m>nums[i]){
-                    m=nums[i];
-                    p=i;
+        for(int op=0;op<k;op++){
+            int minindex=0;
+            for(int i=0;i<nums.length;i++){
+                if(nums[minindex]>nums[i]){
+                    minindex=i;
                 }
             }
-            nums[p]=nums[p]*multiplier;
+            nums[minindex] *= multiplier;
         }
         return nums;
+        
     }
 }
